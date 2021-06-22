@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{url_for('static', filename='assets/img/home-bg.jpg')}}');">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Admin Panel</h1>
+                    <span class="subheading">Manage your posts</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+
+            <h1>Basic Actions</h1>
+            <a href="/signin"><button class="btn btn-primary" style="border-radius: 10px;">Dashboard home</button></a>
+            <a href="/logout"><button class="btn btn-danger" style="border-radius: 10px;">Log Out</button></a>
+
+            <hr>
+            <h1>Add/Edit Post</h1>
+            <form id="edit_from" action="/edit/{{post.sno}}" method="POST">
+                <div class="form-floating">
+                    <input class="form-control" id="title" type="text" placeholder="Enter title..." name="title"
+                        data-sb-validations="required" value="{{post.title}}" />
+                    <label>Title</label>
+                    <div class="invalid-feedback" data-sb-feedback="title:required">A title is required.</div>
+                </div>
+                <div class="form-floating">
+                    <input class="form-control" id="tag_line" type="text" name="tag_line"
+                        placeholder="Enter the tag line..." data-sb-validations="required" value="{{post.tagline}}" />
+                    <label>Tag line</label>
+                    <div class="invalid-feedback" data-sb-feedback="tag_line:required">A tag line is required.</div>
+                </div>
+                <div class="form-floating">
+                    <input class="form-control" id="slug" type="text" name="slug" placeholder="Enter slug here..."
+                        data-sb-validations="required" value="{{post.slug}}" />
+                    <label>slug</label>
+                    <div class="invalid-feedback" data-sb-feedback="slug:required">A slug is required.
+                    </div>
+                </div>
+                <div class="form-floating">
+                    <textarea class="form-control" id="content" name="content" placeholder="Enter content here..."
+                        style="height: 12rem" data-sb-validations="required">{{post.content}}</textarea>
+                    <label>Content</label>
+                    <div class="invalid-feedback" data-sb-feedback="message:required">Content is required.
+                    </div>
+                </div>
+                <div class="form-floating">
+                    <input class="form-control" id="img_url" type="text" name="img_url"
+                        placeholder="Enter image file here..." data-sb-validations="required"
+                        value="{{post.img_url}}" />
+                    <label>Image url</label>
+                    <div class="invalid-feedback" data-sb-feedback="message:required">Image is required.
+                    </div>
+                </div>
+                <br />
+
+                <!-- Submit Button-->
+                <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Submit</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
