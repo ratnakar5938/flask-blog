@@ -182,4 +182,4 @@ def delete(sno):
     return redirect('/signin')
 
 
-app.run(debug=False,host='0.0.0.0')
+app.run(debug=True)
