@@ -64,7 +64,6 @@ nest-asyncio==1.4.3
 notebook==6.2.0
 numpy==1.19.5
 opencv-python==4.5.1.48
-packageravi @ file:///E:/programming/pkg/packageravi/dist/packageravi-0.3.tar.gz
 packaging==20.8
 pandas==1.2.3
 pandocfilters==1.4.3
