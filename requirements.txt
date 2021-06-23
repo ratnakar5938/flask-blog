@@ -88,9 +88,6 @@ PyMsgBox==1.0.9
 pyparsing==2.4.7
 PyPDF2==1.26.0
 pyperclip==1.8.2
-pypiwin32==223
-pypng==0.0.20
-PyQRCode==1.2.1
 PyRect==0.1.4
 pyrsistent==0.17.3
 PyScreeze==0.1.27
